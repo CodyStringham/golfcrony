@@ -1,12 +1,49 @@
 <%= simple_form_for @group do |f| %>
-<%= f.input :age %>
-<%= f.input :city %>
-<%= f.input :course %>
-<%= f.input :county %>
-<%= f.input :day %>
-<%= f.input :group_size %>
-<%= f.input :handicap %>
-<%= f.input :time_frame %>
+
+	<div class="small-12 medium-12 large-4 columns">
 <%= f.input :title %>
-<%= f.button :submit %>
+	</div>
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :age, collection:[["any"],["18-25"],["26-35"],["36-45"],["46-55"],["56-65"],["66+"]] %>
+	</div>
+
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :city, collection:[["Salt Lake"]] %>
+	</div>
+
+
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :course %>
+	</div>
+
+
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :county %>
+	</div>
+
+
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :day %>
+	</div>
+
+
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :group_size %>
+	</div>
+
+
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :handicap %>
+	</div>
+
+
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :time_frame %>
+	</div>
+
+<div class="row">
+	<div class="small-12 columns text-center">
+<%= f.button :submit, class:"button" %>
+	</div>
+</div>
 <% end %>
