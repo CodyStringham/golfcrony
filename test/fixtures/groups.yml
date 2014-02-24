@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  day: MyString
+  time_frame: MyString
+  county: MyString
+  course: MyString
+  city: MyString
+  age: 1
+  handicap: 1
+  group_size: 1
+
+two:
+  title: MyString
+  day: MyString
+  time_frame: MyString
+  county: MyString
+  course: MyString
+  city: MyString
+  age: 1
+  handicap: 1
+  group_size: 1
