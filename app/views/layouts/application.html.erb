@@ -30,10 +30,18 @@
       <li><%= link_to "Groups", groups_path %></li>
     </ul>
     <ul class="right">
+      <% if current_user %>
+      <li>
+        <%= link_to edit_user_path(current_user) do %>
+        <%= current_user.first_name %>
+      <% end %> 
+      </li> 
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
       <li><%= link_to "Sign In", new_user_session_path %></li>
       <li><%= link_to "Sign Up", new_user_registration_path %></li>
     </ul>
+    <% end %>
 
   </section>
 </nav>
