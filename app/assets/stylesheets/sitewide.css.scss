@@ -11,7 +11,7 @@ header.page-header {
     a {
       display: block;
       height: 100px;
-      background: black;
+      background: green;
     }
   }
 }
@@ -20,3 +20,17 @@ div.container {
   max-width: 960px;
   margin: 0 auto;
 }
+
+h1 {
+  text-align: center;
+}
+
+.flash-notice {
+  color: white;
+  padding: 20px;
+  &.notice {
+  background: green;
+  }
+  &.alert {
+  background: red;
+  }

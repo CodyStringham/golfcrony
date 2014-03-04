@@ -13,50 +13,43 @@
   </head>
 
   <body>
+  <header>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Golf Crony", root_path %></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+      </ul>
 
-<header>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="#">Golf Crony</a></h1>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="left">
+          <li><%= link_to "Groups", groups_path %></li>
+        </ul>
+        <ul class="right">
+          <% if current_user %>
+              <li><%= link_to "#{current_user.first_name}", account_path %></li>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </section>
+    </nav>
+  </header>
 
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="left">
-      <li class="active"><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Groups", groups_path %></li>
-    </ul>
-    <ul class="right">
-      <% if current_user %>
-      <li>
-        <%= link_to edit_user_registration_path(current_user) do %>
-        <%= current_user.first_name %>
-      <% end %> 
-      </li> 
-      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-      <li><%= link_to "Sign In", new_user_session_path %></li>
-      <li><%= link_to "Sign Up", new_user_registration_path %></li>
-    </ul>
-    <% end %>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "flash-notice #{name}" %>
+  <% end %>
 
-  </section>
-</nav>
-</header>
+  <div class="container">
 
+    <%= yield %>
 
+  </div>
 
-    <div class="container">
-
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
-    <% end %>
-
-      <%= yield %>
-    </div>
 
 
     <%= javascript_include_tag "application" %>
