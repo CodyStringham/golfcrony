@@ -4,6 +4,8 @@ Golfcrony::Application.routes.draw do
 
   root :to => 'home#index'
 
+  get "/account", to: "home#account"
+
   resources :groups
 
 
