@@ -14,6 +14,11 @@ gem 'simple_form'
 gem "paperclip", "~> 3.0"
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'twitter'
+gem 'fb_graph'
 
 group :development do
   gem "better_errors"
@@ -26,6 +31,7 @@ group :development do
   gem 'guard-livereload'
   gem 'guard-pow', require: false #guard init pow -if pow is missing in guardfile
   gem "letter_opener"
+  gem 'nifty-generators'
 end
 
 
