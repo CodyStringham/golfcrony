@@ -1,3 +1,10 @@
 <h1>Groups</h1>
 <%= link_to "Create a group", new_group_path, class:"button" %>
 
+<% @groups.each do |group| %>
+
+  <h4><%= group.title %></h4>
+  <p><%= group.city %></p>
+
+<% end %>
+
