@@ -23,6 +23,16 @@ div.container {
 h1 {
   text-align: center;
 }
+
 body {
-  
+.flash-notice {
+  color: white;
+  padding: 20px;
+  &.notice {
+  background: green;
+  }
+  &.alert {
+  background: red;
+  }
+
 }
