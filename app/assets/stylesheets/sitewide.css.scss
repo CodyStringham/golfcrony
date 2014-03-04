@@ -20,3 +20,15 @@ div.container {
   max-width: 960px;
   margin: 0 auto;
 }
+
+
+.flash-notice {
+  color: white;
+  padding: 20px;
+  &.notice {
+  background: green;
+  }
+  &.alert {
+  background: red;
+  }
+}
