@@ -1,10 +1,12 @@
 Golfcrony::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {  :omniauth_callbacks => "omniauth_callbacks" }
 
   root :to => 'home#index'
 
   resources :groups
+
+  
 
 
   # The priority is based upon order of creation:
