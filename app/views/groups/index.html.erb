@@ -1,10 +1,36 @@
-<h1>Groups</h1>
-<%= link_to "Create a group", new_group_path, class:"button" %>
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Groups</h1>
+    <h4>Sub heading about what this page does.</h4>
+    <label for="search-input">Search:
+      <input type="text" id="search-input" placeholder="Dyamic and auto-populating search field later on..."/>
+    </label>
+    <%= link_to "Create a group", new_group_path, class:"button expand" %>
+  </div>
+</div>
 
-<% @groups.each do |group| %>
 
-  <h4><%= group.title %></h4>
-  <p><%= group.city %></p>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+      <% @groups.each do |group| %>
 
-<% end %>
 
+      <div class="large-4 medium-4 columns left">
+        <div class="panel">
+          <h4><%= link_to "Title: #{group.title}", group_path(group) %></h4>
+          <p>City: <%= group.city %></p>
+          <p>Day: <%= group.day %></p>
+          <p>County: <%= group.county %></p>
+          <p>Course: <%= group.course %></p>
+          <p>Age: <%= group.age %></p>
+          <p>Handicap: <%= group.handicap %></p>
+          <p>Players: <%= group.group_size %></p>
+        </div>
+      </div>
+
+
+      <% end %>
+    </div>
+  </div>
+</div>
