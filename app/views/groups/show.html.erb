@@ -1,2 +1,84 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+<h1>Confirm your Group Settings</h1>
+<p>Please look over your selections for the group, if everything looks good please proceed to view all our avaliable groups. Otherwise click below to edit your Group.</p>
+
+<div class="container text-center">
+
+<div class="row">
+	<div class="small-6 large-6 columns text-right">
+<p>
+	<b>Title:</b>
+</p>
+<p>
+	<b>Age:</b>
+</p>
+<p>
+	<b>City:</b>
+</p>
+<p>
+	<b>Course:</b>
+</p>
+<p>
+	<b>County:</b>
+</p>
+<p>
+	<b>Day:</b>
+</p>
+<p>
+	<b>Group Size:</b>
+</p>
+<p>
+	<b>Handicap:</b>
+</p>
+<p>
+	<b>Time Frame:</b>
+</p>
+
+	</div>
+
+
+<div class="small-6 large-6 columns text-left">
+<p>
+		
+		<%= @group.title %>
+</p>
+<p>
+		
+		<%= @group.age %>
+</p>
+<p>
+		
+		<%= @group.city %>
+</p>
+<p>
+		
+		<%= @group.course %>
+</p>
+<p>
+		
+		<%= @group.county %>
+</p>
+<p>
+		
+		<%= @group.day %>
+</p>
+<p>
+		
+		<%= @group.group_size %>
+</p>
+<p>
+		
+		<%= @group.handicap %>
+</p>
+<p>
+		
+		<%= @group.time_frame %>
+</p>
+</div>
+</div>
+
+
+<%= link_to "View all Groups", groups_path, class: "button tiny" %> 
+<%= link_to "Edit your Group", edit_group_path, class: "button tiny" %>
+
+
+</div>

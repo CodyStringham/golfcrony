@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
 
 
   def update
-    if @group.update_attributes
+    if @group.update_attributes(params[:group])
       redirect_to group_path(@group)
     else
       render "edit"
