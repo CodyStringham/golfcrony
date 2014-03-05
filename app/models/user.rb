@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :first_name, :last_name, :age, :handicap, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :first_name, :last_name, :age, :handicap, :password, 
+  :password_confirmation, :remember_me, :provider, :uid
   # attr_accessible :title, :body
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
@@ -30,7 +31,7 @@ class User < ActiveRecord::Base
         if registered_user
           return registered_user
         else
-          user = User.create(name:auth.extra.raw_info.name,
+          user = User.create(#name:auth.extra.raw_info.name,
                               provider:auth.provider,
                               uid:auth.uid,
                               email:auth.info.email,
