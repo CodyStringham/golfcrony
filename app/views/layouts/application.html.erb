@@ -9,49 +9,29 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+    <script src="/js/vendor/modernizr.js"></script>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
 
-  <header>
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to "Golf Crony", root_path %></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="left">
-          <li><%= link_to "Groups", groups_path %></li>
-        </ul>
-        <ul class="right">
-          <% if current_user %>
-              <li><%= link_to "#{current_user.first_name}", account_path %></li>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign In", new_user_session_path %></li>
-            <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          <% end %>
-        </ul>
-      </section>
-    </nav>
-  </header>
-
+  <%= render 'layouts/nav_bar' %>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "flash-notice #{name}" %>
   <% end %>
-
+  <div class="padding-top">
+  <%= render 'layouts/orbit_slider' %>
+  </div>
   <div class="container">
 
     <%= yield %>
 
   </div>
 
-
+    <script src="/js/foundation.min.js"></script>
+    <script src="/js/vendor/jquery.js"></script>
+     <script src="/js/vendor/fastclick.js"></script>
+    <script> $(document).foundation(); </script>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
