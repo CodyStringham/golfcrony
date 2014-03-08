@@ -3,9 +3,8 @@ class GroupsController < ApplicationController
   before_filter :get_group, only: [:show, :edit, :update, :destroy]
 
   def index
-    @groups = Group.all
+    @groups = Group.search(params[:search])
   end
-  
 
   def show
   end
