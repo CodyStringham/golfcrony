@@ -19,9 +19,9 @@
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "flash-notice #{name}" %>
   <% end %>
-  <div class="padding-top">
+
   <%= render 'layouts/orbit_slider' %>
-  </div>
+
   <div class="container">
 
     <%= yield %>
