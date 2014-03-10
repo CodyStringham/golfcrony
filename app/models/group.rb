@@ -1,5 +1,7 @@
 class Group < ActiveRecord::Base
-  has_and_belongs_to_many :users
+  belongs_to :owners
+  has_many :users 
+
   attr_accessible :age, :city, :county, :course, :day, :group_size, :handicap, :time_frame, :title
 
   def self.search(search)
