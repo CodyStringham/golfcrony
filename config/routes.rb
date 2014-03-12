@@ -1,15 +1,17 @@
 Golfcrony::Application.routes.draw do
 
+  devise_for :owners
+
   devise_for :users, :controllers => {  :omniauth_callbacks => "omniauth_callbacks" }
 
   root :to => 'home#index'
 
   get "/account", to: "home#account"
 
-  resources :groups do
-  member do
-  get 'sendemail', to: "groups#sendemail", as: "sendemail_group"
-  end
+  resources :groups do 
+   member do
+  get 'sendemail', to: "groups#sendemail", as: "sendemail"
+    end
   end
   
 

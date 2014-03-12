@@ -1,8 +1,8 @@
 class AddsGroupsAndUsersJoinTable < ActiveRecord::Migration
   def change
     create_table :groups_users do |t|
-      t.belongs_to :groups
-      t.belongs_to :users  
+      t.belongs_to :group
+      t.belongs_to :user  
     end  
   end
 end
