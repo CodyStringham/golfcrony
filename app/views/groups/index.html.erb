@@ -32,6 +32,7 @@
           <p>Age: <%= group.age %></p>
           <p>Handicap: <%= group.handicap %></p>
           <p>Players: <%= group.group_size %></p>
+          <p><%= link_to "Join this Group", sendemail_group_group_path(group), class:"button" %></p>
         </div>
       </div>
 

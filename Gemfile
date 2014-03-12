@@ -19,6 +19,8 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'twitter'
 gem 'fb_graph'
+gem 'hpricot'
+gem 'premailer-rails'
 
 group :development do
   gem "better_errors"
