@@ -1,0 +1,26 @@
+<header>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Golf Crony", root_path %></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="left">
+          <li><%= link_to "Groups", groups_path %></li>
+        </ul>
+        <ul class="right">
+          <% if current_user %>
+              <li><%= link_to "#{current_user.first_name}", account_path %></li>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </section>
+    </nav>
+  </header>

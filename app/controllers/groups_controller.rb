@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.search(params[:search])
+
   end
 
   def show
@@ -43,11 +44,21 @@ class GroupsController < ApplicationController
     redirect_to groups_path, alert: "Project has been deleted."
   end
 
+  def sendemail
+     @group = Group.find(params[:id])
+    Join.join_group(@group, current_user).deliver
+    redirect_to root_path
+    flash[:notice] = 'Your request to join this group has been submitted!'
+
+  end
+
 
   private
 
   def get_group
     @group = Group.find(params[:id])
   end
+
+
 
 end

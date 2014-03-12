@@ -1,0 +1,21 @@
+<h1>Someone is interested in your Group!</h1>
+<h2><%= @user.first_name %> is interested in joining your golf group!</h2>
+
+		<h3>Your Group Details:</h3>	
+		<p><%= @group.title %></p>
+		<p><%= @group.course %></p>
+		<p><%= @group.city %></p>
+		<p><%= @group.day %></p>
+		<p><%= @group.group_size %></p>
+		<p><%= @group.time_frame %></p>
+	
+
+
+	
+		<h3><%= @user.first_name %>'s Details:</h3>
+		<p><%= @user.first_name %></p>
+		<p><%= @user.last_name %></p>
+		<p><%= @user.age %></p>
+		<p><%= @user.handicap %></p>
+		<p><%= link_to "Accept Request", root_path %></p>
+		<p><%= link_to "Deny Request", root_path %></p>

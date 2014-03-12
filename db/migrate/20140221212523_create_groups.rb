@@ -10,6 +10,7 @@ class CreateGroups < ActiveRecord::Migration
       t.integer :age
       t.integer :handicap
       t.integer :group_size
+      t.string :email
 
       t.timestamps
     end
