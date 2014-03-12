@@ -21,3 +21,5 @@ database.yml
 .ruby-version
 .ruby-gemset
 .powenv
+db/schema.rb
+Guardfile
