@@ -6,10 +6,10 @@ Golfcrony::Application.routes.draw do
 
   get "/account", to: "home#account"
 
-  resources :groups do
-  member do
-  get 'sendemail', to: "groups#sendemail", as: "sendemail_group"
-  end
+  resources :groups do 
+   member do
+  get 'sendemail', to: "groups#sendemail", as: "sendemail"
+    end
   end
   
 
