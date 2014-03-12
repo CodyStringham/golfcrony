@@ -40,6 +40,7 @@ class GroupsController < ApplicationController
 
   def destroy
     @group.destroy
+    redirect_to groups_path, alert: "Project has been deleted."
   end
 
 

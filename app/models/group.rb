@@ -4,7 +4,7 @@ class Group < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['title iLIKE ? OR day iLIKE ? OR course iLIKE ? OR city iLIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
     else
       find(:all)
     end
