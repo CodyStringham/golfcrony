@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(:version => 20140312012936) do
     t.integer "user_id"
   end
 
+  create_table "join_messages", :force => true do |t|
+    t.text     "body"
+    t.string   "email"
+    t.string   "name"
+    t.string   "subject"
+    t.string   "topic"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "owners", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
