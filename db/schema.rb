@@ -11,9 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20140310033338) do
-
+ActiveRecord::Schema.define(:version => 20140312012936) do
 
   create_table "groups", :force => true do |t|
     t.string   "title"
@@ -25,13 +23,14 @@ ActiveRecord::Schema.define(:version => 20140310033338) do
     t.integer  "age"
     t.integer  "handicap"
     t.integer  "group_size"
+    t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "groups_users", :force => true do |t|
-    t.integer "group_id"
-    t.integer "user_id"
+    t.integer "groups_id"
+    t.integer "users_id"
   end
 
   create_table "join_messages", :force => true do |t|
@@ -63,7 +62,6 @@ ActiveRecord::Schema.define(:version => 20140310033338) do
 
   add_index "owners", ["email"], :name => "index_owners_on_email", :unique => true
   add_index "owners", ["reset_password_token"], :name => "index_owners_on_reset_password_token", :unique => true
-
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
