@@ -18,13 +18,14 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(params[:group])
+    @group.owner_id = current_user.id
     if @group.save
+      flash[:notice] = "Group #{@group.title} added!"
       redirect_to group_path(@group)
     else
       render "new"
     end
   end
-
 
   def edit
   end
