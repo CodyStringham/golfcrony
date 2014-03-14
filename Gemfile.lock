@@ -302,8 +302,8 @@ DEPENDENCIES
   devise
   factory_girl_rails
   fb_graph
-  figaro
   ffaker
+  figaro
   foundation-rails
   guard
   guard-livereload
