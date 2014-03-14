@@ -17,9 +17,15 @@
 
   <%= render 'layouts/nav_bar' %>
   
-<div class="small-6 md-6 large-6 columns">
+<div class="small-7 large-7 columns">
   <%= render 'layouts/orbit_slider' %>
 </div>
+
+<div class="small-5 large-5 columns">
+  <%= render 'layouts/weather_widget' %>
+</div>
+
+
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "flash-notice #{name}" %>
   <% end %>
