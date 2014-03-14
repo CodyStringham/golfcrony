@@ -16,13 +16,15 @@
   <body>
 
   <%= render 'layouts/nav_bar' %>
+  
+<div class="small-6 md-6 large-6 columns">
+  <%= render 'layouts/orbit_slider' %>
+</div>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "flash-notice #{name}" %>
   <% end %>
 
-  <div class="small-6 md-6 large-6 columns">
-    <%= render 'layouts/orbit_slider' %>
-  </div>
+
   <div class="container">
 
     <%= yield %>

@@ -13,6 +13,8 @@ gem 'simple_form'
 
 gem "paperclip", "~> 3.0"
 
+gem "ransack", github: "activerecord-hackery/ransack"
+
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
@@ -38,6 +40,12 @@ group :development do
   gem 'nifty-generators'
 end
 
+
+group :development, :test do
+  #gem "minitest-rails", github: "blowmage/minitest-rails"
+  gem 'factory_girl_rails'
+  gem "ffaker"
+end
 
 
 # Gems used only for assets and not required

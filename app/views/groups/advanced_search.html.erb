@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Advanced Search</h1>
+    <h4>Find the exact cronies your looking for</h4>
+  </div>
+
+  <%#=  attr_accessible :age, :city, :county, :course, :day, :group_size, :handicap, :time_frame, :title, :email %>
+    
+  <%= search_form_for @search, url: search_path do |f| %>
+  <div class="large-12 columns">
+    <div class="panel">
+      <div class="row">
+        <div class="large-4 columns">
+          <%= f.label :title_cont, "Title" %>
+          <%= f.text_field :title_cont %>
+        </div>
+        <div class="large-4 columns">
+          <%= f.label :city_cont, "City" %>
+          <%= f.text_field :city_cont %>
+        </div>
+        <div class="large-4 columns">
+          <%= f.label :age_cont, "Age" %>
+          <%= f.text_field :age_cont %>
+        </div>
+        <div class="large-4 columns">
+          <%= f.label :county_cont, "County" %>
+          <%= f.text_field :county_cont %>
+        </div>
+        <div class="large-4 columns">
+          <%= f.label :day_cont, "Day" %>
+          <%= f.text_field :day_cont %>
+        </div>
+        <div class="large-4 columns">
+          <%= f.label :group_size_cont, "Group Size" %>
+          <%= f.text_field :group_size_cont %>
+        </div>
+        <div class="large-4 columns">
+          <%= f.label :handicap_cont, "Handicap" %>
+          <%= f.text_field :handicap_cont %>
+        </div>
+        <div class="large-4 columns">
+          <%= f.label :time_frame_cont, "Time Frame" %>
+          <%= f.text_field :time_frame_cont %>
+        </div>
+        <div class="large-4 columns">
+          <%= f.submit "search", class: "search-button right" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<!-- ransack, will_paginate gem, -->
+
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+      <% @groups.each do |group| %>
+
+
+      <div class="large-4 medium-4 columns left">
+        <div class="panel group-contain">
+
+          <h4><%= link_to "#{group.title}", group_path(group) %></h4>
+          <p><%= group.city %>  |  <%= group.day %><br />
+          Course: <%= group.course %></p>
+
+          <div class="group-sublist">
+          <div class="row">
+            <div class="large-4 columns">
+              <p>Age<br /><%= group.age %></p>
+            </div>
+            <div class="large-4 columns">
+              <p>Handicap<br /><%= group.handicap %></p>
+            </div>
+            <div class="large-4 columns">
+              <p>Size<br /><%= group.group_size %></p>
+            </div>
+          </div>
+
+          </div>
+          <p><%= link_to "Join this Group", sendemail_group_path(group), class:"button" %></p>
+        </div>
+      </div>
+
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <hr />
+  <div class="large-12 columns">
+    <h4>Can't find what you're looking for?</h4>
+  </div>
+  <div class="large-4 large-offset-4 left columns">
+    <%= link_to "Create a Group", new_group_path, class:"button expand" %>
+  </div>
+</div>
