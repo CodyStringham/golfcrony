@@ -21,6 +21,8 @@ gem 'twitter'
 gem 'fb_graph'
 gem 'hpricot'
 gem 'premailer-rails'
+gem "cancan"
+gem 'figaro'
 
 group :development do
   gem "better_errors"
