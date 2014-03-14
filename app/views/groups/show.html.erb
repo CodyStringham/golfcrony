@@ -5,11 +5,16 @@
 
 <div class="row">
 	<div class="small-6 large-6 columns text-right">
+
+
 <p>
 	<b>Title:</b>
 </p>
 <p>
-	<b>Age:</b>
+	<b>Minimum age:</b>
+</p>
+<p>
+	<b>Maximum age:</b>
 </p>
 <p>
 	<b>City:</b>
@@ -30,7 +35,10 @@
 	<b>Cronys:</b>
 </p>	
 <p>
-	<b>Handicap:</b>
+	<b>Minimum handicap:</b>
+</p>
+<p>
+	<b>Maximum handicap:</b>
 </p>
 <p>
 	<b>Time Frame:</b>
@@ -40,45 +48,43 @@
 
 
 <div class="small-6 large-6 columns text-left">
+
 <p>
-		
 		<%= @group.title %>
 </p>
 <p>
-		
-		<%= @group.age %>
+		<%= @group.min_age %>
 </p>
 <p>
-		
+		<%= @group.max_age %>
+</p>
+<p>
 		<%= @group.city %>
 </p>
 <p>
-		
 		<%= @group.course %>
 </p>
 <p>
-		
 		<%= @group.county %>
 </p>
 <p>
-		
 		<%= @group.day %>
 </p>
 <p>
-		
 		<%= @group.group_size %>
 </p>
 <p>
-
 		<%= <% @group.groups_user.each do |groups_user| %>
 		  <li><%= groups_user.user.full_name %>, <%= groups_user.status %></li>
 		<% end %> %>
-<p>
-		
-		<%= @group.handicap %>
 </p>
 <p>
-		
+		<%= @group.min_handicap %>
+</p>
+<p>
+		<%= @group.max_handicap %>
+</p>
+<p>
 		<%= @group.time_frame %>
 </p>
 </div>

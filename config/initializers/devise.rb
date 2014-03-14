@@ -22,7 +22,8 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
 
   require "omniauth-facebook"
-config.omniauth :facebook, "1430177987225037", "a13d70e95e807bdc66f6edf67e81e28c"
+config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope: '
+  user_photo, email, user_birthday'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -231,6 +232,9 @@ config.omniauth :facebook, "1430177987225037", "a13d70e95e807bdc66f6edf67e81e28c
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
+
+      # config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"]
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
