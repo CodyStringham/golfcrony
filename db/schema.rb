@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(:version => 20140313193545) do
 
+  create_table "friendship", :force => true do |t|
+    t.integer "group_id"
+    t.integer "user_id"
+    t.string  "status"
+  end
+
   create_table "groups", :force => true do |t|
     t.string   "owner_name"
     t.string   "title"
@@ -28,11 +34,6 @@ ActiveRecord::Schema.define(:version => 20140313193545) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "owner_id"
-  end
-
-  create_table "groups_users", :force => true do |t|
-    t.integer "group_id"
-    t.integer "user_id"
   end
 
   create_table "join_messages", :force => true do |t|

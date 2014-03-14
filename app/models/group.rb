@@ -1,7 +1,6 @@
 class Group < ActiveRecord::Base 
-  belongs_to :group_users 
-  has_many :users, through: :group_users
-  
+  has_many :friendship
+
   attr_accessible :age, :city, :county, :course, :day, :group_size, :handicap, :time_frame, :title, :email, :owner_id
 
 
