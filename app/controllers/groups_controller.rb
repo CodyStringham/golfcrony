@@ -3,8 +3,15 @@ class GroupsController < ApplicationController
   before_filter :get_group, only: [:show, :edit, :update, :destroy]
 
   def index
-    @groups = Group.search(params[:search])
+    @groups = Group.simplesearch(params[:simplesearch])
+    #@groups = @groups.title(params[:title]) if params[:title]
 
+  end
+
+
+  def advanced_search
+    @search = Group.search(params[:q])
+    @groups = @search.result
   end
 
   def show
@@ -41,6 +48,7 @@ class GroupsController < ApplicationController
 
   def destroy
     @group.destroy
+    redirect_to groups_path, notice: "Group was deleted"
   end
 
   def sendemail

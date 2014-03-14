@@ -16,11 +16,11 @@
   <body>
 
   <%= render 'layouts/nav_bar' %>
+  <%= render 'layouts/orbit_slider' %>
+
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "flash-notice #{name}" %>
   <% end %>
-
-  <%= render 'layouts/orbit_slider' %>
 
   <div class="container">
 

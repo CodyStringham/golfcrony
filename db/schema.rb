@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20140312012936) do
   end
 
   create_table "groups_users", :force => true do |t|
-    t.integer "groups_id"
-    t.integer "users_id"
+    t.integer "group_id"
+    t.integer "user_id"
   end
 
   create_table "join_messages", :force => true do |t|
