@@ -10,15 +10,17 @@
 100.times do
 
   randgroup = Group.create(
-    :age => rand(16..75),
-    :city => Faker::Address.city,
-    :county => Faker::Address.uk_county,
-    :course => Faker::Address.city,
+    :min_age => rand(16..35),
+    :max_age => rand(36..75),
+    :city => Faker::Address.city.slice(0..25),
+    :county => Faker::Address.uk_county.slice(0..25),
+    :course => Faker::Address.city.slice(0..25),
     :day => ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].sample,
     :group_size => rand(2..4),
-    :handicap => rand(-10..20),
-    :time_frame => ["Morning", "Afternoon"],
-    :title => Faker::DizzleIpsum.words.first
+    :min_handicap => rand(-10..4),
+    :max_handicap => rand(5..20),
+    :time_frame => ["Morning", "Mid-day", "Afternoon"],
+    :title => Faker::DizzleIpsum.words.first.slice(0..64)
     )
 
 
