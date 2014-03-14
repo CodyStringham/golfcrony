@@ -4,7 +4,10 @@
 <%= f.input :title %>
 	</div>
 	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :age, collection:[["any"],["18-25"],["26-35"],["36-45"],["46-55"],["56-65"],["66+"]] %>
+<%= f.input :min_age %>
+	</div>
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :max_age %>
 	</div>
 
 	<div class="small-12 medium-6 large-4 columns">
@@ -33,7 +36,11 @@
 
 
 	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :handicap %>
+<%= f.input :min_handicap %>
+	</div>
+
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :max_handicap %>
 	</div>
 
 

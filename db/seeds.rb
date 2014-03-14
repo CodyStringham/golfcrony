@@ -7,11 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-10.times do
+100.times do
 
-  project = Group.create(:age => "5", :city => "Salt Lake", :county => "Utah", :course => "Shit Course", :day => "Wednesday", :group_size => "4", :handicap => "7", :time_frame => "sure", :title => "Going Golfing")  
-  project2 = Group.create(:age => "23", :city => "Provo", :county => "Salt Lake", :course => "Shit Course", :day => "Saturady", :group_size => "3", :handicap => "2", :time_frame => "hmmm", :title => "Lonely Golfer")
-  project3 = Group.create(:age => "54", :city => "Orem", :county => "Salt Lake", :course => "Best", :day => "Wednesday", :group_size => "2", :handicap => "4", :time_frame => "sure", :title => "Get Bent")
-  project4 = Group.create(:age => "15", :city => "Punani", :county => "Utah", :course => "Bluesky Vallies", :day => "Monday", :group_size => "1", :handicap => "1", :time_frame => "okay", :title => "Cool Beans!")
+  randgroup = Group.create(
+    :min_age => rand(16..35),
+    :max_age => rand(36..75),
+    :city => Faker::Address.city.slice(0..25),
+    :county => Faker::Address.uk_county.slice(0..25),
+    :course => Faker::Address.city.slice(0..25),
+    :day => ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].sample,
+    :group_size => rand(2..4),
+    :min_handicap => rand(-10..4),
+    :max_handicap => rand(5..20),
+    :time_frame => ["Morning", "Mid-day", "Afternoon"],
+    :title => Faker::DizzleIpsum.words.first.slice(0..64)
+    )
+
 
 end
