@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  belongs_to :groups
+  belongs_to :group_users
+  has_many :groups, through: :group_users
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -3,8 +3,15 @@ class GroupsController < ApplicationController
   before_filter :get_group, only: [:show, :edit, :update, :destroy]
 
   def index
-    @groups = Group.search(params[:search])
+    @groups = Group.simplesearch(params[:simplesearch])
+    #@groups = @groups.title(params[:title]) if params[:title]
 
+  end
+
+
+  def advanced_search
+    @search = Group.search(params[:q])
+    @groups = @search.result
   end
 
   def show
@@ -18,13 +25,14 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(params[:group])
+    @group.owner_id = current_user.id
     if @group.save
+      flash[:notice] = "Group #{@group.title} added!"
       redirect_to group_path(@group)
     else
       render "new"
     end
   end
-
 
   def edit
   end
@@ -41,6 +49,7 @@ class GroupsController < ApplicationController
 
   def destroy
     @group.destroy
+    redirect_to groups_path, notice: "Group was deleted"
   end
 
   def sendemail
