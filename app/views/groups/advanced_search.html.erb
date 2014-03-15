@@ -18,11 +18,11 @@
           <%= f.label :city_cont, "City" %>
           <%= f.text_field :city_cont %>
         </div>
-        <div class="large-4 columns">
+        <div class="large-2 columns">
           <%= f.label :min_age_cont, "Minimum age" %>
           <%= f.text_field :min_age_cont %>
         </div>
-        <div class="large-4 columns">
+        <div class="large-2 columns">
           <%= f.label :max_age_cont, "Maximum age" %>
           <%= f.text_field :max_age_cont %>
         </div>
@@ -38,11 +38,11 @@
           <%= f.label :group_size_cont, "Group Size" %>
           <%= f.text_field :group_size_cont %>
         </div>
-        <div class="large-4 columns">
+        <div class="large-2 columns">
           <%= f.label :min_handicap_cont, "Minimum handicap" %>
           <%= f.text_field :min_handicap_cont %>
         </div>
-        <div class="large-4 columns">
+        <div class="large-2 columns">
           <%= f.label :max_handicap_cont, "Maximum handicap" %>
           <%= f.text_field :max_handicap_cont %>
         </div>
@@ -78,10 +78,10 @@
           <div class="group-sublist">
           <div class="row">
             <div class="large-4 columns">
-              <p>Age<br /><%= group.age %></p>
+              <p>Age<br /><%= group.min_age %></p>
             </div>
             <div class="large-4 columns">
-              <p>Handicap<br /><%= group.handicap %></p>
+              <p>Handicap<br /><%= group.min_handicap %></p>
             </div>
             <div class="large-4 columns">
               <p>Size<br /><%= group.group_size %></p>

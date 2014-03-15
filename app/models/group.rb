@@ -1,5 +1,6 @@
 class Group < ActiveRecord::Base 
-  has_many :friendship
+  has_many :friendships
+  has_many :users, through: :friendships
   
   attr_accessible :min_age, :max_age, :city, :county, :course, :day, :group_size, :min_handicap, :max_handicap, :time_frame, :title, :email, :owner_id
 

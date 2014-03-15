@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20140314201748) do
 
+<<<<<<< HEAD
+=======
+  create_table "friendships", :force => true do |t|
+    t.integer "group_id"
+    t.integer "user_id"
+    t.string  "status"
+  end
+
+>>>>>>> 250d88c4ff687137ba6556b38edbcbc41b84a9d8
   create_table "groups", :force => true do |t|
     t.string   "title"
     t.string   "day"
@@ -45,26 +54,6 @@ ActiveRecord::Schema.define(:version => 20140314201748) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "owners", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0,  :null => false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-  end
-
-  add_index "owners", ["email"], :name => "index_owners_on_email", :unique => true
-  add_index "owners", ["reset_password_token"], :name => "index_owners_on_reset_password_token", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
