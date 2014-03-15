@@ -23,3 +23,6 @@ database.yml
 .powenv
 db/schema.rb
 Guardfile
+
+# Ignore application configuration
+/config/application.yml

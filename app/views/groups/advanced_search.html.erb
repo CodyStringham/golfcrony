@@ -3,8 +3,6 @@
     <h1>Advanced Search</h1>
     <h4>Find the exact cronies your looking for</h4>
   </div>
-
-  <%#=  attr_accessible :age, :city, :county, :course, :day, :group_size, :handicap, :time_frame, :title, :email %>
     
   <%= search_form_for @search, url: search_path do |f| %>
   <div class="large-12 columns">
@@ -15,43 +13,50 @@
           <%= f.text_field :title_cont %>
         </div>
         <div class="large-4 columns">
+          <%= f.label :county_cont, "County" %>
+          <%= f.select :county_cont, ["Salt Lake", "Utah"] %>
+        </div>
+        <div class="large-4 columns">
           <%= f.label :city_cont, "City" %>
           <%= f.text_field :city_cont %>
         </div>
-        <div class="large-2 columns">
-          <%= f.label :min_age_cont, "Minimum age" %>
-          <%= f.text_field :min_age_cont %>
-        </div>
-        <div class="large-2 columns">
-          <%= f.label :max_age_cont, "Maximum age" %>
-          <%= f.text_field :max_age_cont %>
-        </div>
-        <div class="large-4 columns">
-          <%= f.label :county_cont, "County" %>
-          <%= f.text_field :county_cont %>
-        </div>
         <div class="large-4 columns">
           <%= f.label :day_cont, "Day" %>
-          <%= f.text_field :day_cont %>
-        </div>
-        <div class="large-4 columns">
-          <%= f.label :group_size_cont, "Group Size" %>
-          <%= f.text_field :group_size_cont %>
-        </div>
-        <div class="large-2 columns">
-          <%= f.label :min_handicap_cont, "Minimum handicap" %>
-          <%= f.text_field :min_handicap_cont %>
-        </div>
-        <div class="large-2 columns">
-          <%= f.label :max_handicap_cont, "Maximum handicap" %>
-          <%= f.text_field :max_handicap_cont %>
+          <%= f.select :day_cont, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
         </div>
         <div class="large-4 columns">
           <%= f.label :time_frame_cont, "Time Frame" %>
-          <%= f.text_field :time_frame_cont %>
+          <%= f.select :time_frame_cont, ["Morning", "Mid-day", "Afternoon"] %>
         </div>
         <div class="large-4 columns">
-          <%= f.submit "search", class: "search-button right" %>
+          <%= f.label :group_size_eq, "Group Size" %>
+          <%= f.select :group_size_eq, [1,2,3,4] %>
+
+        </div>
+        <div class="large-4 columns">
+          <label for="age-amount">Age:</label>
+          <input type="text" id="age-amount" style="border:0; color:#f6931f; font-weight:bold;">
+          <div id="slider-range-age"></div>
+        </div>
+          <div class="slider-hide min-max-age">
+            <%= f.label :avg_age_gteq, "Age (min)" %>
+            <%= f.text_field :avg_age_gteq %>
+            <%= f.label :avg_age_lteq, "Age (max)" %>
+            <%= f.text_field :avg_age_lteq %>
+          </div>
+        <div class="large-4 columns">
+          <label for="handi-amount">Handicap:</label>
+          <input type="text" id="handi-amount" style="border:0; color:#f6931f; font-weight:bold;">
+          <div id="slider-range-handicap"></div>
+        </div>
+          <div class="slider-hide min-max-handi">
+            <%= f.label :avg_handicap_gteq, "Handicap (min)" %>
+            <%= f.text_field :avg_handicap_gteq %>
+            <%= f.label :avg_handicap_lteq, "Handicap (max)" %>
+            <%= f.text_field :avg_handicap_lteq %>
+          </div>
+        <div class="large-4 columns">
+          <%= f.submit "search", class: "button tiny expand right adv-search-btn" %>
         </div>
       </div>
     </div>
@@ -59,7 +64,7 @@
   <% end %>
 </div>
 
-<!-- ransack, will_paginate gem, -->
+<!-- ransack, will_paginate gem, autocomplete -->
 
 
 <div class="row">
@@ -78,10 +83,10 @@
           <div class="group-sublist">
           <div class="row">
             <div class="large-4 columns">
-              <p>Age<br /><%= group.min_age %></p>
+              <p>Age<br /><%= group.avg_age %></p>
             </div>
             <div class="large-4 columns">
-              <p>Handicap<br /><%= group.min_handicap %></p>
+              <p>Handicap<br /><%= group.avg_handicap %></p>
             </div>
             <div class="large-4 columns">
               <p>Size<br /><%= group.group_size %></p>
