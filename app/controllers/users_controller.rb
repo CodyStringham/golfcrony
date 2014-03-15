@@ -10,5 +10,6 @@ class UsersController < ApplicationController
 
   def user_account
     @user = current_user
+    @group = Group.where(owner_id: current_user.id)
   end
 end
