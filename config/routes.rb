@@ -1,10 +1,16 @@
 Golfcrony::Application.routes.draw do
 
+  get "users/index"
+
+  get "users/show"
+
+  get "users/account", to: "users#user_account", as: "account"
+
   devise_for :users, :controllers => {  :omniauth_callbacks => "omniauth_callbacks" }
 
   root :to => 'home#index'
 
-  get "/account", to: "home#account"
+  
 
   get "/group/search", to: "groups#advanced_search", as: "search"
 

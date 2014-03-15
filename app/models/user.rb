@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :groups, through: :cronys
+  has_many :groups, through: :friendships
+  has_many :friendships
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
