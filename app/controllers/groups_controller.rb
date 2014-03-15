@@ -15,6 +15,8 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:id])
+    @friendship = @groups.friendship.new
   end
 
 

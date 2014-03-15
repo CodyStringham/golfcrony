@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20140314201748) do
 
-  create_table "friendship", :force => true do |t|
+  create_table "friendships", :force => true do |t|
     t.integer "group_id"
     t.integer "user_id"
     t.string  "status"
