@@ -32,6 +32,9 @@
 	<b>Group Size:</b>
 </p>
 <p>
+	<b>Cronys:</b>
+</p>	
+<p>
 	<b>Minimum handicap:</b>
 </p>
 <p>
@@ -69,6 +72,11 @@
 </p>
 <p>
 		<%= @group.group_size %>
+</p>
+<p>
+		<%= <% @group.groups_user.each do |groups_user| %>
+		  <li><%= groups_user.user.full_name %>, <%= groups_user.status %></li>
+		<% end %> %>
 </p>
 <p>
 		<%= @group.min_handicap %>
