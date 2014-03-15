@@ -13,7 +13,9 @@ class GroupsController < ApplicationController
   end
 
   def show
-    
+    @group = Group.find(params[:id])
+
+    #@friendship = @groups.friendship.new
   end
 
 
@@ -25,6 +27,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(params[:group])
     @group.owner_id = current_user.id
+    @group.owner_name = current_user.first_name 
     if @group.save
       flash[:notice] = "Group #{@group.title} added!"
       redirect_to group_path(@group)
@@ -59,6 +62,7 @@ class GroupsController < ApplicationController
 
   end
 
+   
 
   private
 

@@ -1,5 +1,6 @@
 class Group < ActiveRecord::Base 
-  has_many :friendship
+  has_many :friendships
+  has_many :users, through: :friendships
   
   attr_accessible :avg_age, :city, :county, :course, :day, :group_size, :avg_handicap, :time_frame, :title, :email, :owner_id
 
@@ -10,6 +11,8 @@ class Group < ActiveRecord::Base
       find(:all)
     end
   end
+
+  
 
 end
 
