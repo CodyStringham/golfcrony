@@ -13,16 +13,14 @@
 
 ActiveRecord::Schema.define(:version => 20140314201748) do
 
-<<<<<<< HEAD
-=======
   create_table "friendships", :force => true do |t|
     t.integer "group_id"
     t.integer "user_id"
     t.string  "status"
   end
 
->>>>>>> 250d88c4ff687137ba6556b38edbcbc41b84a9d8
   create_table "groups", :force => true do |t|
+    t.string   "owner_name"
     t.string   "title"
     t.string   "day"
     t.string   "time_frame"
@@ -38,11 +36,6 @@ ActiveRecord::Schema.define(:version => 20140314201748) do
     t.integer  "min_age"
     t.integer  "max_handicap"
     t.integer  "min_handicap"
-  end
-
-  create_table "groups_users", :force => true do |t|
-    t.integer "groups_id"
-    t.integer "users_id"
   end
 
   create_table "join_messages", :force => true do |t|
