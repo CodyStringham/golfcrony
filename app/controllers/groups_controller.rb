@@ -4,8 +4,6 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.simplesearch(params[:simplesearch])
-    #@groups = @groups.title(params[:title]) if params[:title]
-
   end
 
 
@@ -15,6 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    
   end
 
 

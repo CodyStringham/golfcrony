@@ -9,10 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
-<<<<<<< HEAD
  *= require foundation_and_overrides
-
-=======
->>>>>>> 864b1e7cc0690091d45b9aa41f9d51d6f6ec4f80
+ *= require jquery.ui.all
  *= require_tree .
  */

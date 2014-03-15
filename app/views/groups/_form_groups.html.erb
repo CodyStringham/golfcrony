@@ -3,15 +3,16 @@
 	<div class="small-12 medium-12 large-4 columns">
 <%= f.input :title %>
 	</div>
-	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :min_age %>
-	</div>
-	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :max_age %>
-	</div>
+
 
 	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :city, collection:[["Salt Lake"]] %>
+<%= f.label :avg_age, "Average age:" %>
+<%= f.input :avg_age, label: false %>
+	</div>
+
+
+	<div class="small-12 medium-6 large-4 columns">
+<%= f.input :city %>
 	</div>
 
 
@@ -21,31 +22,32 @@
 
 
 	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :county %>
+<%= f.label :county %>
+<%= f.select :county, ["Salt Lake", "Utah"] %>
 	</div>
 
 
 	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :day %>
+<%= f.label :day %>
+<%= f.select :day, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
 	</div>
 
 
 	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :group_size %>
+<%= f.label :group_size %>
+<%= f.select :group_size, [1,2,3,4] %>
 	</div>
 
 
 	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :min_handicap %>
-	</div>
-
-	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :max_handicap %>
+<%= f.label :avg_handicap, "Average handicap" %>
+<%= f.select :avg_handicap, ["-10", "-5", "0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"] %>
 	</div>
 
 
 	<div class="small-12 medium-6 large-4 columns">
-<%= f.input :time_frame %>
+<%= f.label :time_frame %>
+<%= f.select :time_frame, ["Morning", "Mid-day", "Afternoon"] %>
 	</div>
 
 	<div class="small-12 medium-6 large-4 columns">
