@@ -58,7 +58,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     Join.join_group(@group, current_user).deliver
     redirect_to root_path
-    flash[:notice] = 'Your request to join this group has been submitted!'
+    # flash[:notice] = 'Your request to join this group has been submitted!'
 
   end
 
