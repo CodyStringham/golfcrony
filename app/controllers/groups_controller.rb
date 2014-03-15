@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @friendship = @groups.friendship.new
+    #@friendship = @groups.friendship.new
   end
 
 
@@ -61,6 +61,7 @@ class GroupsController < ApplicationController
 
   end
 
+   
 
   private
 

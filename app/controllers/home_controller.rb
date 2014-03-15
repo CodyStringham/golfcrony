@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   	
   end
   
-  def account
+	def account
   end
 
 end
