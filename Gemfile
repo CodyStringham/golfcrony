@@ -25,6 +25,7 @@ gem 'hpricot'
 gem 'premailer-rails'
 gem "cancan"
 gem 'figaro'
+gem 'kaminari'
 
 group :development do
   gem "better_errors"
