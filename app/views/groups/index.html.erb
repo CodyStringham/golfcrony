@@ -44,6 +44,7 @@
 
           </div>
           <p><%= link_to "Join this Group", sendemail_group_path(group), class:"button" %></p>
+          
         </div>
       </div>
 
@@ -54,6 +55,9 @@
 
 <div class="row">
   <hr />
+
+<div class="text-center"><%= paginate @groups %></div>
+
   <div class="large-12 columns">
     <h4>Can't find what you're looking for?</h4>
   </div>
