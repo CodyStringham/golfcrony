@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
 
   def index
     @simple = Group.simplesearch(params[:simplesearch])
-    @groups = Group.page(params[:page]).per(9)
+    @groups = Kaminari.paginate_array(@simple).page(params[:page]).per(9)
   end
 
 
