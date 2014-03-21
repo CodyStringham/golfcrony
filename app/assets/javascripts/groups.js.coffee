@@ -14,7 +14,7 @@ $ ->
     $(".min-max-handi").setValues("-10", "50")
 
   if $(".min-max-age").find("input").first().val() == ""
-    $(".min-max-age").setValues("16", "75")
+    $(".min-max-age").setValues("15", "75")
 
 
   handiMin = $(".min-max-handi").find("input").first().val()
@@ -26,6 +26,7 @@ $ ->
   $("#slider-range-handicap").slider
     range: true
     min: -10
+    step: 5
     max: 50
     values: [
       handiMin
@@ -44,7 +45,8 @@ $ ->
 
   $("#slider-range-age").slider
     range: true
-    min: 16
+    min: 15
+    step: 5
     max: 75
     values: [
       ageMin
