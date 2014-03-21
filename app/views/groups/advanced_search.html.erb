@@ -14,7 +14,7 @@
         </div>
         <div class="large-4 columns">
           <%= f.label :county_cont, "County" %>
-          <%= f.select :county_cont, ["Salt Lake", "Utah"] %>
+          <%= f.select :county_cont, ["Salt Lake", "Utah"], include_blank: true %>
         </div>
         <div class="large-4 columns">
           <%= f.label :city_cont, "City" %>
@@ -22,15 +22,15 @@
         </div>
         <div class="large-4 columns">
           <%= f.label :day_cont, "Day" %>
-          <%= f.select :day_cont, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+          <%= f.select :day_cont, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], include_blank: true %>
         </div>
         <div class="large-4 columns">
           <%= f.label :time_frame_cont, "Time Frame" %>
-          <%= f.select :time_frame_cont, ["Morning", "Mid-day", "Afternoon"] %>
+          <%= f.select :time_frame_cont, ["Morning", "Mid-day", "Afternoon"], include_blank: true %>
         </div>
         <div class="large-4 columns">
           <%= f.label :group_size_eq, "Group Size" %>
-          <%= f.select :group_size_eq, [2,3,4] %>
+          <%= f.select :group_size_eq, [2,3,4], include_blank: true %>
 
         </div>
         <div class="large-4 columns">
