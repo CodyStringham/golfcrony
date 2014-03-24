@@ -16,9 +16,6 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-
-
-    #@friendship = @groups.friendship.new
   end
 
 
@@ -53,8 +50,12 @@ class GroupsController < ApplicationController
 
 
   def destroy
-    @group.destroy
-    redirect_to groups_path, notice: "Group was deleted"
+      if current_user.id == @group.owner_id
+      @group.destroy
+      redirect_to groups_path, notice: "Group was deleted"
+    else
+      redirect_to root_path, notice: "Not Authorized"
+    end
   end
 
   def sendemail
@@ -72,7 +73,6 @@ class GroupsController < ApplicationController
   def get_group
     @group = Group.find(params[:id])
   end
-
 
 
 end

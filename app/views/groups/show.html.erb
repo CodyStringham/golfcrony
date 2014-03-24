@@ -72,10 +72,8 @@
  
 <%= link_to "View all Groups", groups_path, class: "button tiny" %> 
 
-<% if current_user.id = @group.owner_id %>
-
-<%= link_to "Edit your Group", edit_group_path, class: "button tiny" %>
-<%= link_to "Delete Group", @group, method: :delete, class: "button tiny" %>
+<% if current_user.id == @group.owner_id %>
+	<%= link_to "Edit your Group", edit_group_path, class: "button tiny" %>
+	<%= link_to "Delete Group", @group, method: :delete, class: "button tiny" %>
 <% end %>
-
 </div>
