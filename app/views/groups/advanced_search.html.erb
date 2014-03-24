@@ -14,7 +14,7 @@
         </div>
         <div class="large-4 columns">
           <%= f.label :county_cont, "County" %>
-          <%= f.select :county_cont, ["Salt Lake", "Utah"] %>
+          <%= f.select :county_cont, ["Salt Lake", "Utah"], include_blank: true %>
         </div>
         <div class="large-4 columns">
           <%= f.label :city_cont, "City" %>
@@ -22,20 +22,20 @@
         </div>
         <div class="large-4 columns">
           <%= f.label :day_cont, "Day" %>
-          <%= f.select :day_cont, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+          <%= f.select :day_cont, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], include_blank: true %>
         </div>
         <div class="large-4 columns">
           <%= f.label :time_frame_cont, "Time Frame" %>
-          <%= f.select :time_frame_cont, ["Morning", "Mid-day", "Afternoon"] %>
+          <%= f.select :time_frame_cont, ["Morning", "Mid-day", "Afternoon"], include_blank: true %>
         </div>
         <div class="large-4 columns">
           <%= f.label :group_size_eq, "Group Size" %>
-          <%= f.select :group_size_eq, [1,2,3,4] %>
+          <%= f.select :group_size_eq, [2,3,4], include_blank: true %>
 
         </div>
         <div class="large-4 columns">
           <label for="age-amount">Age:</label>
-          <input type="text" id="age-amount" style="border:0; color:#f6931f; font-weight:bold;">
+          <input type="text" id="age-amount" style="border:0; color:#454545; font-weight:bold;" disabled>
           <div id="slider-range-age"></div>
         </div>
           <div class="slider-hide min-max-age">
@@ -46,7 +46,7 @@
           </div>
         <div class="large-4 columns">
           <label for="handi-amount">Handicap:</label>
-          <input type="text" id="handi-amount" style="border:0; color:#f6931f; font-weight:bold;">
+          <input type="text" id="handi-amount" style="border:0; color:#454545; font-weight:bold;" disabled>
           <div id="slider-range-handicap"></div>
         </div>
           <div class="slider-hide min-max-handi">
@@ -107,6 +107,11 @@
 <div class="row">
   <hr />
   <div class="large-12 columns">
+
+    <div class="text-center">
+     <%= paginate @groups %>
+   </div>
+
     <h4>Can't find what you're looking for?</h4>
   </div>
   <div class="large-4 large-offset-4 left columns">

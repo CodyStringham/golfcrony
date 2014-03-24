@@ -1,19 +1,22 @@
 class GroupsController < ApplicationController
 
   before_filter :get_group, only: [:show, :edit, :update, :destroy, :sendemail]
+  before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def index
-    @groups = Group.simplesearch(params[:simplesearch])
+    @simple = Group.simplesearch(params[:simplesearch])
+    @groups = Kaminari.paginate_array(@simple).page(params[:page]).per(9)
   end
 
 
   def advanced_search
     @search = Group.search(params[:q])
-    @groups = @search.result
+    @groups = @search.result.page(params[:page]).per(9)
   end
 
   def show
     @group = Group.find(params[:id])
+
 
     #@friendship = @groups.friendship.new
   end
