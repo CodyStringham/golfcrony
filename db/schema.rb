@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(:version => 20140315184720) do
   create_table "friendship", :force => true do |t|
     t.integer "group_id"
     t.integer "user_id"
-    t.string  "status"
   end
 
   create_table "groups", :force => true do |t|

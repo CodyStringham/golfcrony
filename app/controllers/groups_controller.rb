@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  before_filter :get_group, only: [:show, :edit, :update, :destroy]
+  before_filter :get_group, only: [:show, :edit, :update, :destroy, :sendemail]
   before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def index
@@ -59,7 +59,6 @@ class GroupsController < ApplicationController
   end
 
   def sendemail
-    @group = Group.find(params[:id])
     Join.join_group(@group, current_user).deliver
     redirect_to root_path
     # flash[:notice] = 'Your request to join this group has been submitted!'

@@ -1,14 +1,27 @@
 class FriendshipController < ApplicationController
-  def req
+  def group
     @group = Group.find(params[:id])
-    @user = User.first_name(params[:id])
-    unless @Friendship.nil?
-      if Friendship.request(@group, @user)
-        flash[:notice] = "Join group #{@group.title} requested"
-      else
-        flash[:notice] = "Joining #{@group.title} cannot be requested"
-      end
-    end
-    redirect_to :controller => :user, :action => :index
+    
   end
+  def create 
+
+    @friendship = Friendship.new(params[:friendship])
+    @friendship.group_id = group.id
+    @friendship.user_id = current_user.id
+    if @friendship.save
+      flash[:notice] = " Request to join #{@group.title} submitted !"
+      redirect_to group_path(@group)
+    end
+  end
+
+  def destroy
+     @friendship = Friendship.find(params[:id])
+     @friendship.delete 
+     redirect_to account_path, notice: "You left the group"
+  end
+
+  def index
+    
+  end
+
 end
