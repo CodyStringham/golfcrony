@@ -52,9 +52,6 @@ class GroupsController < ApplicationController
   def destroy
       @group.destroy
       redirect_to groups_path, notice: "Group was deleted"
-    else
-      redirect_to root_path, notice: "Not Authorized"
-    end
   end
 
   def sendemail
