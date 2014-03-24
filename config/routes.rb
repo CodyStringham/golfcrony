@@ -17,6 +17,8 @@ Golfcrony::Application.routes.draw do
   resources :groups do 
    member do
   get 'sendemail', to: "groups#sendemail", as: "sendemail"
+  get 'join_group', to: "friendship#create", as: "join"
+  delete 'leave', to: "friendship#destroy", as: "leave"
     end
   end
   

@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many :groups, through: :friendships
   has_many :friendships
-
+  has_many :created_groups, class_name: Group, primary_key: :id, foreign_key: :owner_id
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
