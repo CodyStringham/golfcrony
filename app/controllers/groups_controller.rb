@@ -50,7 +50,6 @@ class GroupsController < ApplicationController
 
 
   def destroy
-      if current_user.id == @group.owner_id
       @group.destroy
       redirect_to groups_path, notice: "Group was deleted"
     else
