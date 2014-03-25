@@ -16,9 +16,6 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-
-
-    #@friendship = @groups.friendship.new
   end
 
 
@@ -53,8 +50,8 @@ class GroupsController < ApplicationController
 
 
   def destroy
-    @group.destroy
-    redirect_to groups_path, notice: "Group was deleted"
+      @group.destroy
+      redirect_to groups_path, notice: "Group was deleted"
   end
 
   def sendemail
@@ -71,7 +68,6 @@ class GroupsController < ApplicationController
   def get_group
     @group = Group.find(params[:id])
   end
-
 
 
 end

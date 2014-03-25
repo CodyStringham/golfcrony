@@ -1,11 +1,12 @@
 <% if !current_user%>
 
-<div class="row">
-  <div class="large-12 columns">
+<div class="row fullWidth">
+  <div class="large-12 columns welcome_text">
 
-    <h1>Golf Crony Home Page</h1>
+    <h1>Golf Crony </h1>
+    <p>Golf Crony is an easy way to find and manage your golf friends. No one likes the hassle of trying to get all of your golf friends on the same time table to book a tee time. Now you don't have to- Simply create a group with your avaliability and let your cronies join your group if the time works for them!</p>
 
-    <h4>Functionality:</h4>
+    <h4></h4>
     <div class="text-center">
       <%= link_to "Sign In", new_user_session_path, class: "button" %>
       <%= link_to "Sign Up", new_user_registration_path, class: "button" %>
@@ -15,12 +16,12 @@
 
 <% else %>
 
-<div class="row">
+<div class="row fullWidth">
   <div class="large-12 columns">
 
     <h1>User Welcome Page</h1>
 
-    <h4>Functionality:</h4>
+    <h4></h4>
     <div class="row">
       <div class="large-4 medium-4 columns">
         <div class="panel">
