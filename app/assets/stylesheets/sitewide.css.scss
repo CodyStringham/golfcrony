@@ -33,8 +33,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fullWidth {
-   width: 100%;
+   width: 100% !important;
    margin-left: auto;
    margin-right: auto;
-   max-width: initial;
+   
+} 
+.row{
+  max-width: 200rem;
 }
