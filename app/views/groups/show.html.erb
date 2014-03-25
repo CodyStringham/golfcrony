@@ -11,6 +11,9 @@
 	<b>Title:</b>
 </p>
 <p>
+	<b>Owner:</b>
+</p>
+<p>
 	<b>Average age:</b>
 </p>
 <p>
@@ -34,6 +37,9 @@
 <p>
 	<b>Time Frame:</b>
 </p>
+<p>
+	<b>Cronys:</b>
+</p>
 
 	</div>
 
@@ -41,31 +47,39 @@
 <div class="small-6 large-6 columns text-left">
 
 <p>
-		<%= @group.title %>
+	<%= @group.title %>
 </p>
 <p>
-		<%= @group.avg_age %>
+	<%= @group.owner.first_name %>
 </p>
 <p>
-		<%= @group.city %>
+	<%= @group.avg_age %>
 </p>
 <p>
-		<%= @group.course %>
+	<%= @group.city %>
 </p>
 <p>
-		<%= @group.county %>
+	<%= @group.course %>
 </p>
 <p>
-		<%= @group.day %>
+	<%= @group.county %>
 </p>
 <p>
-		<%= @group.group_size %>
+	<%= @group.day %>
 </p>
 <p>
-		<%= @group.avg_handicap %>
+	<%= @group.group_size %>
 </p>
 <p>
-		<%= @group.time_frame %>
+	<%= @group.avg_handicap %>
+</p>
+<p>
+	<%= @group.time_frame %>
+</p>
+<p>
+	<% @group.users.each do |x|%>
+		<%= x.first_name %>,
+	<% end %>
 </p>
 </div>
 </div>
