@@ -3,7 +3,7 @@ class Group < ActiveRecord::Base
   has_many :users, through: :friendships
   belongs_to :owner, class_name: User
   
-  attr_accessible :avg_age, :city, :county, :course, :day, :group_size, :avg_handicap, :time_frame, :title, :email, :owner_id
+  attr_accessible :avg_age, :city, :county, :course, :day, :group_size, :avg_handicap, :time_frame, :title, :email, :owner_id, :owner_name
 
   def self.simplesearch(search)
     if search

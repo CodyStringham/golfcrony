@@ -10,6 +10,8 @@
 100.times do
 
   randgroup = Group.create(
+    :owner_name => ["Tom", "Dick", "Harry", "Steven", "Mary", "Susie"].sample,
+    :owner_id => rand(1..5),
     :avg_age => rand(16..75),
     :city => ["Alta","Bluffdale","Cottonwood Heights","Draper","Herriman","Holladay","Midvale","Murray","Riverton","Sandy","Salt Lake City","South Jordan","South Salt Lake","Taylorsville","West Jordan","West Valley City","Alpine","American Fork","Cedar Fort Town","Cedar Hills","Draper","Eagle Mountain","Elk Ridge","Highland","Lehi","Lindon","Mapleton","Orem","Payson","Pleasant Grove","Provo","Salem","Santaquin","Saratoga Springs","Spanish Fork","Springville","Vineyard Town","Woodland Hills"].sample,
     :county => ["Salt Lake", "Utah"].sample,
