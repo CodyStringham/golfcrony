@@ -27,7 +27,7 @@
 
 			<div class="small-6 large-6 columns padding-top text-center">
 				 <%- resource_class.omniauth_providers.each do |provider| %>
-	    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "fi-social-facebook size-24 button fbbutton" %><br />
+	    <%= link_to "  Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "fi-social-facebook size-24 button fbbutton" %><br />
 	  <% end -%>
 	  
 
